@@ -13,13 +13,17 @@ const Routes = () => {
         Register,
         Login,
         Politica,
-        Welcome
+        Welcome,
+        Settings,
+        Instructions2,
+        Instructions3,
+        Instructions,
+        Level1
     } = useViews();
 
     const { useScreenHooks } = useControllers();
     const { useWelcome } = useScreenHooks();
     const { login } = useWelcome();
-    const { user } = login;
 
     const routes = [
         {
@@ -41,12 +45,32 @@ const Routes = () => {
         {
             name: "Welcome",
             component: Welcome
-        }
+        },
+        {
+            name: "Settings",
+            component: Settings
+        },
+        {
+            name: "Instructions",
+            component: Instructions
+        },
+        {
+            name: "Instructions2",
+            component: Instructions2
+        },
+        {
+            name: "Instructions3",
+            component: Instructions3
+        },
+        {
+            name: "Level1",
+            component: Level1
+        },
     ]
 
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={ login.token !== "" ? "Welcome" : "Home" }>
+            <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={login.token !== "" ? "Welcome" : "Home"}>
                 {
                     _.map(routes, (item: any, index: number) => {
                         return (

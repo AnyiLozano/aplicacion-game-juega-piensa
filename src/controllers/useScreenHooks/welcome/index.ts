@@ -1,7 +1,7 @@
 import useApi from "../../../api";
 import { useSelector } from "react-redux";
 import useModels from "../../../models";
-import { ICallback } from 'models/interfaces/general';
+import { ICallback } from '../../../models/interfaces/general';
 import { useEffect } from "react";
 
 const useWelcome = (redirect?: any, redirectLogin? : any) => {
@@ -14,7 +14,7 @@ const useWelcome = (redirect?: any, redirectLogin? : any) => {
     const { dispatch, useLoginActions } = useActions();
     const { actLogout } = useLoginActions();
     
-    const handleLogout = () => {
+    const logout = () => {
         const request : ICallback = {
             onSuccess: () => {
                 redirect && redirect()
@@ -24,17 +24,10 @@ const useWelcome = (redirect?: any, redirectLogin? : any) => {
 
         dispatch(actLogout(request));
     }
-
-    console.log(login)
-
-    useEffect(() => {
-        if(login.token === ""){
-            redirectLogin && redirectLogin()
-        }
-    }, [login, redirect])
+    
     return {
         login,
-        handleLogout
+        logout
     };
 }
 

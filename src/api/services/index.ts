@@ -1,10 +1,12 @@
 import useRegisterServices from './register';
 import useLoginServices from './login';
+import useSettingsServices from './settings';
 
 const useServices = () => {
     return {
         useRegisterServices,
-        useLoginServices
+        useLoginServices,
+        useSettingsServices,
     };
 };
 

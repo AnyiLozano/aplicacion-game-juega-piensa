@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import useRegisterActions from './register';
 import useLoginActions from './login';
+import useSettingsActions from './settings';
 
 const useActions = () => {
     const dispatch = useDispatch();
@@ -8,7 +9,8 @@ const useActions = () => {
     return {
         dispatch,
         useRegisterActions,
-        useLoginActions
+        useLoginActions,
+        useSettingsActions
     };
 };
 
