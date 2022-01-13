@@ -1,10 +1,14 @@
 import Inputs from "./Inputs";
 import Navigation from './Navigation/index';
+import Alert from './Alert';
+import Pista from './Pista';
 
 const useComponents = () => {
     return {
         Inputs, 
-        Navigation
+        Navigation,
+        Alert,
+        Pista
     }
 };
 

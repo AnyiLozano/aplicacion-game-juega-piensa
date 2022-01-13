@@ -16,7 +16,7 @@ const SettingsStyles = StyleSheet.create({
         fontSize: 40,
         paddingTop: '2%',
         textTransform: 'uppercase',
-        color: "#59358C",
+        color: "#DB0862",
         fontWeight: "900"
     },
     containerInputs: {
@@ -28,7 +28,7 @@ const SettingsStyles = StyleSheet.create({
         marginTop: "5%"
     },
     container_button: {
-        marginTop: '8%'
+        marginTop: '5%'
     },
     button: {
     },

@@ -18,6 +18,7 @@ const Welcome: FC<{ navigation: any }> = ({ navigation }) => {
     const { useWelcome } = useScreenHooks();
     const { login } = useWelcome(redirect, redirectLogin);
     const { user } = login;
+    console.log(login)
 
     // Components
     const { Navigation } = useComponents();
@@ -46,7 +47,7 @@ const Welcome: FC<{ navigation: any }> = ({ navigation }) => {
                 <Stack style={WelcomeStyles.tabsContent}>
                     <HStack display="flex" justifyContent="center">
                         <View>
-                            <Button variant="unstyled" onPress={() => { }}>
+                            <Button variant="unstyled" onPress={() => navigation.navigate('Instructions')}>
                                 <Image
                                     source={require('../../assets/images/Level1.png')}
                                     alt="Welcome's Image"
@@ -54,7 +55,7 @@ const Welcome: FC<{ navigation: any }> = ({ navigation }) => {
                             </Button>
                         </View>
                         <View>
-                            <Button variant="unstyled" onPress={() => { }}>
+                            <Button variant="unstyled" onPress={() =>  navigation.navigate('Instruciones2')}>
                                 <Image
                                     source={require('../../assets/images/Level2.png')}
                                     alt="Welcome's Image"
@@ -62,7 +63,7 @@ const Welcome: FC<{ navigation: any }> = ({ navigation }) => {
                             </Button>
                         </View>
                         <View>
-                            <Button variant="unstyled" onPress={() => { }}>
+                            <Button variant="unstyled" onPress={() => navigation.navigate('Instrucciones1')}>
                                 <Image
                                     source={require('../../assets/images/Level3.png')}
                                     alt="Welcome's Image"

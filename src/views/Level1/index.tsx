@@ -34,7 +34,7 @@ const Instructions3: FC<IGeneralProps> = (props) => {
             />
             <View style={InstructionsStyles.view}>
                 <View style={InstructionsStyles.subContent}>
-                    <Button variant="unstyled" onPress={() => {}}>
+                    <Button variant="unstyled" onPress={() => navigation.navigate('Conteo2')}>
                         <Image
                             source={require('../../assets/images/LevelInfo1.png')}
                             alt="Intructions' Image"
