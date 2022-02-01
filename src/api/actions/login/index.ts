@@ -44,9 +44,49 @@ const useLoginActions = () => {
         }
     }
 
+    const actLevel1 = async(dispatch: Dispatch) => {
+        try {
+            dispatch({
+                type: "SET_LEVEL1",
+                payload: {
+                    level1: true
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const actLevel2 = async(dispatch: Dispatch) => {
+        try {
+            dispatch({
+                type: "SET_LEVEL2",
+                payload: {
+                    level2: true
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const actLevel3 = async(dispatch: Dispatch) => {
+        try {
+            dispatch({
+                type: "SET_LEVEL3",
+                payload: true
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return {
         actLogin,
-        actLogout
+        actLogout,
+        actLevel1,
+        actLevel2,
+        actLevel3
     }
 };
 

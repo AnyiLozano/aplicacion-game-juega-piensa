@@ -27,7 +27,7 @@ const Conteo: FC<{ navigation: any }> = ({ navigation }) => {
                 setShowOne(true);
             } else {
                 clearInterval(i);
-                navigation.navigate("Vamos");
+                navigation.navigate("Vamos");  
             }
         }, 1000)
     }, [step]);

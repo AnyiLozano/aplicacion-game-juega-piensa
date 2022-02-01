@@ -16,7 +16,7 @@ const Welcome: FC<{ navigation: any }> = ({ navigation }) => {
     // Controller
     const { useScreenHooks } = useControllers();
     const { useWelcome } = useScreenHooks();
-    const { login } = useWelcome(redirect, redirectLogin);
+    const { login, level1, level2 } = useWelcome(redirect, redirectLogin);
     const { user } = login;
     console.log(login)
 
@@ -55,20 +55,42 @@ const Welcome: FC<{ navigation: any }> = ({ navigation }) => {
                             </Button>
                         </View>
                         <View>
-                            <Button variant="unstyled" onPress={() =>  navigation.navigate('Instruciones2')}>
-                                <Image
-                                    source={require('../../assets/images/Level2.png')}
-                                    alt="Welcome's Image"
-                                />
-                            </Button>
+                            {
+                                level1.level1 ? (
+                                    <Button variant="unstyled" onPress={() => navigation.navigate('Instruciones2')}>
+                                        <Image
+                                            source={require('../../assets/images/Level2.png')}
+                                            alt="Welcome's Image"
+                                        />
+                                    </Button>
+                                ) : (
+                                    <Button variant="unstyled">
+                                        <Image
+                                            source={require('../../assets/images/Level2.png')}
+                                            alt="Welcome's Image"
+                                        />
+                                    </Button>
+                                )
+                            }
                         </View>
                         <View>
-                            <Button variant="unstyled" onPress={() => navigation.navigate('Instrucciones1')}>
-                                <Image
-                                    source={require('../../assets/images/Level3.png')}
-                                    alt="Welcome's Image"
-                                />
-                            </Button>
+                            {
+                                level2.level2 ? (
+                                    <Button variant="unstyled" onPress={() => navigation.navigate('Instrucciones1')}>
+                                        <Image
+                                            source={require('../../assets/images/Level3.png')}
+                                            alt="Welcome's Image"
+                                        />
+                                    </Button>
+                                ) : (
+                                    <Button variant="unstyled">
+                                        <Image
+                                            source={require('../../assets/images/Level3.png')}
+                                            alt="Welcome's Image"
+                                        />
+                                    </Button>
+                                )
+                            }
                         </View>
                     </HStack>
                 </Stack>

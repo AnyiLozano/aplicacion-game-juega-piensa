@@ -7,8 +7,10 @@ import { useEffect } from "react";
 const useWelcome = (redirect?: any, redirectLogin? : any) => {
     const { useSelectors } = useModels();
     const { useLoginSelectors } = useSelectors();
-    const { loginSelector } = useLoginSelectors();
+    const { loginSelector, level1Selector, level2Selector } = useLoginSelectors();
     const login = useSelector(loginSelector);
+    const level1 = useSelector(level1Selector);
+    const level2 = useSelector(level2Selector);
 
     const { useActions } = useApi();
     const { dispatch, useLoginActions } = useActions();
@@ -27,7 +29,9 @@ const useWelcome = (redirect?: any, redirectLogin? : any) => {
     
     return {
         login,
-        logout
+        logout,
+        level1,
+        level2
     };
 }
 

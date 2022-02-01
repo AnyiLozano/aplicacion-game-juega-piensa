@@ -24,7 +24,7 @@ const WelcomeStyles = StyleSheet.create({
         paddingHorizontal: '10%'
     },
     tabsContent: {
-        marginTop: '4%',
+        marginTop: '3%',
         paddingHorizontal: '10%'
     },
     title_text2: {

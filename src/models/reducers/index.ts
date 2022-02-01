@@ -5,12 +5,15 @@ import useLoginReducers from './login';
 const useReducers = () => {
     //Reducers
     const { test } = useTestReducers();
-    const { login } = useLoginReducers();
+    const { login, level1, level2, level3 } = useLoginReducers();
 
     return combineReducers(
         Object.assign({
             test,
-            login
+            login,
+            level1,
+            level2,
+            level3
         })
     );
 };

@@ -1,8 +1,9 @@
 import useControllers from "../../controllers";
 import { Button, Center, HStack, Image, Stack, Text, View } from "native-base";
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import FelicidadesN2Styles from './felicidades2.style'
 import useComponents from '../../components/index';
+import useApi from "../../api";
 
 const FelicidadesN2: FC<{ navigation: any }> = ({ navigation }) => {
     const redirect = (): void => {
@@ -14,10 +15,13 @@ const FelicidadesN2: FC<{ navigation: any }> = ({ navigation }) => {
     }
 
     // Controller
-    const { useScreenHooks } = useControllers();
-    const { useWelcome } = useScreenHooks();
-    const { login } = useWelcome(redirect, redirectLogin);
-    const { user } = login;
+    const { useActions } = useApi();
+    const { dispatch, useLoginActions } = useActions();
+    const { actLevel2 } = useLoginActions();
+
+    useEffect(() => {
+        dispatch(actLevel2)
+    }, [dispatch, actLevel2])
 
     // Components
     const { Navigation } = useComponents();

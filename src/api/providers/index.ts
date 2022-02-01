@@ -4,7 +4,7 @@ import axios from 'axios';
 import useSettingsProviders from './settings';
 
 const useProviders = () => {
-    axios.defaults.baseURL = "http://uvamin-api.seranest-interactiva.com/api";
+    axios.defaults.baseURL = "http://api-game-uvamin.emlproyectos.com.co/api";
     
     return {
         useRegisterProviders,
