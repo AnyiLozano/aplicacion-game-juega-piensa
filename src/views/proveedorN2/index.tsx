@@ -21,7 +21,7 @@ const ProveedorN2: FC<IGeneralProps> = (props) => {
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation } = useComponents();
@@ -122,7 +122,7 @@ const ProveedorN2: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='ProveedorN3' type="error" level='level1' question='question2' show={showAlertError} />
                 <Alert navigation={navigation} view='ProveedorN3' type="success" level='level1' question='question2' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation />
         </React.Fragment>
     );
 }

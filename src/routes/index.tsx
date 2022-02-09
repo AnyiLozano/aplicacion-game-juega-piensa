@@ -4,6 +4,8 @@ import _ from "lodash";
 import React from "react";
 import useViews from "../views";
 import useControllers from '../controllers';
+import useModels from "../models";
+import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
@@ -51,9 +53,10 @@ const Routes = () => {
         
     } = useViews();
 
-    const { useScreenHooks } = useControllers();
-    const { useWelcome } = useScreenHooks();
-    const { login } = useWelcome();
+    const { useSelectors } = useModels();
+    const { useLoginSelectors } = useSelectors();
+    const { loginSelector } = useLoginSelectors();
+    const { token } = useSelector(loginSelector);
 
     const routes = [
         {
@@ -212,7 +215,7 @@ const Routes = () => {
 
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={login.token !== "" ? "Welcome" : "Home"}>
+            <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName={token !== "" ? "Welcome" : "Home"}>
                 {
                     _.map(routes, (item: any, index: number) => {
                         return (

@@ -21,7 +21,7 @@ const Prueba2: FC<IGeneralProps> = (props) => {
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation } = useComponents();
@@ -80,7 +80,7 @@ const Prueba2: FC<IGeneralProps> = (props) => {
                             <View style={{ paddingTop: "5%" }}>
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
-                                        <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('correct')}>
+                                        <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('correct')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                             Tomándolo con abundante agua durante o después de las comidas
                                             </Text>
@@ -89,7 +89,7 @@ const Prueba2: FC<IGeneralProps> = (props) => {
                                 </Stack>
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
-                                        <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
+                                        <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                             Tomándolo durante las primeras horas de la mañana, en ayunas
                                             </Text>
@@ -122,7 +122,7 @@ const Prueba2: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='Prueba3' type="error" level='level3' question='question2' show={showAlertError} />
                 <Alert navigation={navigation} view='Prueba3' type="success" level='level3' question='question2' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation/>
         </React.Fragment> 
     );
 }

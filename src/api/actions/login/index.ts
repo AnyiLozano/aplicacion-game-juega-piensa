@@ -1,5 +1,5 @@
 import { Dispatch } from "redux";
-import { IActionLogin } from "../../../models/interfaces/login";
+import { IActionLogin, IActionLogout } from "../../../models/interfaces/login";
 import useServices from "../../services";
 import { LOGIN } from '../../../types';
 import { ICallback } from "../../../models/interfaces/general";
@@ -16,6 +16,13 @@ const useLoginActions = () => {
             const res = await loginServices(fullname);
             const { data } = res.data;
 
+            data.fullname = fullname
+
+            dispatch({
+                type: "SET_LEVELS",
+                payload: data.levels
+            });
+
             dispatch({
                 type: LOGIN,
                 payload: data
@@ -27,14 +34,21 @@ const useLoginActions = () => {
         }
     }
 
-    const actLogout = (request: ICallback) => async(dispatch: Dispatch) => {
-        const { onError, onSuccess } = request;
+    const actLogout = (request: IActionLogout) => async(dispatch: Dispatch) => {
+        const { onError, onSuccess, fullname } = request;
         try {
+            console.log(fullname)
             dispatch({
                 type: LOGIN,
                 payload: {
+                    fullname: fullname,
                     token: "",
-                    user: {}
+                    user: {},
+                    levels: {
+                        level2: false,
+                        level3: false
+                    }
+                    
                 }
             });
 

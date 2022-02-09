@@ -13,6 +13,16 @@ const useRegisterActions = () => {
             const res = await registerUserService(data);
 
             if(res.data.transaction.status === true){
+
+                dispatch({
+                    type: "LOGIN",
+                    payload: {
+                        token: '',
+                        user: {}, 
+                        fullname: data.fullname
+                    }
+                });
+                
                 onSuccess && onSuccess();
             }else{
                 onError && onError(res.data.message.content);

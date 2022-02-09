@@ -21,13 +21,13 @@ const Prueba3: FC<IGeneralProps> = (props) => {
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation } = useComponents();
 
     return (
-        <React.Fragment>
+        <React.Fragment>   
             <Image
                 source={require('../../assets/images/prueba-2-22.png')}
                 alt="Welcome's Background"
@@ -113,7 +113,7 @@ const Prueba3: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='Prueba4' type="error" level='level3' question='question3' show={showAlertError} />
                 <Alert navigation={navigation} view='Prueba4' type="success" level='level3' question='question3' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation/>
         </React.Fragment> 
     );
 }

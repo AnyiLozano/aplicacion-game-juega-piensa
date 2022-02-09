@@ -8,20 +8,12 @@ import ProveedorN4Styles from './proveedorN4.style';
 
 
 const ProveedorN4: FC<IGeneralProps> = (props) => {
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
-
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
-
     const { navigation } = props;
 
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation } = useComponents();
@@ -82,7 +74,7 @@ const ProveedorN4: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('correct')}>
                                             <Text style={{ marginLeft: "10%", borderBottomColor: "orange", borderBottomWidth: 2 }}>
-                                                ¡Claro que yes!
+                                                ¡Claro que si!
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -122,7 +114,7 @@ const ProveedorN4: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='FelicidadesN1' type="error" level='level1' question='question4' show={showAlertError} />
                 <Alert navigation={navigation} view='FelicidadesN1' type="success" level='level1' question='question4' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation />
         </React.Fragment>
     );
 }

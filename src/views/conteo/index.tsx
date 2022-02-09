@@ -92,7 +92,7 @@ const Conteo: FC<{ navigation: any }> = ({ navigation }) => {
                     </HStack>
                 </Stack>
             </View>
-            <Navigation navigation={navigation}/>
+            <Navigation/>
         </React.Fragment>
     );
 }

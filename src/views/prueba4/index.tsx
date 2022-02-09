@@ -8,20 +8,14 @@ import Prueba4Styles from './Prueba4.style';
 
 
 const Prueba4: FC<IGeneralProps> = (props) => {
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
-
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
+    
 
     const { navigation } = props;
 
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation } = useComponents();
@@ -46,7 +40,7 @@ const Prueba4: FC<IGeneralProps> = (props) => {
                                         />
                                     </View>
                                     <View style={{ marginTop: "4%", position: "relative", marginRight: "30%" }}>
-                                        <Image
+                                         <Image
                                             source={require('../../assets/images/reloj.png')}
                                             alt="Welcome's Image"
                                         />
@@ -122,7 +116,7 @@ const Prueba4: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='FelicidadesN3' type="error" level='level3' question='question4' show={showAlertError} />
                 <Alert navigation={navigation} view='FelicidadesN3' type="success" level='level3' question='question4' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation  />
         </React.Fragment> 
     );
 }

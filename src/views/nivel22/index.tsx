@@ -21,7 +21,7 @@ const Nivel22: FC<IGeneralProps> = (props) => {
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation, Pista } = useComponents();
@@ -84,7 +84,7 @@ const Nivel22: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "5%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                                 Cápsulas de Uvamín™ retard 100 mg
                                             </Text>
                                         </Checkbox>
@@ -102,16 +102,16 @@ const Nivel22: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                                 Berifén™ 50 mg, comprimidos gastrorresistentes recubiertos con película
                                             </Text>
                                         </Checkbox>
                                     </HStack>
                                 </Stack>
-                                <Stack style={{ marginBottom: "3%" }}>
+                                <Stack style={{ marginBottom: "3%" }}>      
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('correct')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "5.5%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                                 Berifén™ Parche transdérmico
                                             </Text>
                                         </Checkbox>
@@ -125,7 +125,7 @@ const Nivel22: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='Nivel23' type="error" level='level2' question='question2' show={showAlertError} />
                 <Alert navigation={navigation} view='Nivel23' type="success" level='level2' question='question2' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation/>
         </React.Fragment>
     );
 }

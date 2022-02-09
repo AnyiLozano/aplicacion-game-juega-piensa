@@ -11,7 +11,7 @@ const useSettingsProviders = () => {
     const editUser = (data: IEditUser) => {
         return axios({
             method: "POST",
-            url: "/settings/edit-user",
+            url: "/auth/edit-user",
             data: data,
             headers: {
                 "Authentication": `Bearer ${login.token}`

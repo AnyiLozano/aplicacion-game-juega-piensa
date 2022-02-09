@@ -6,24 +6,13 @@ import { IGeneralProps } from "../../models/interfaces/general";
 import InstructionsStyles from './instructions.styles';
 
 const Instructions2: FC<IGeneralProps> = (props) => {
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
-
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
-
-    const { navigation } = props;
-
     // Components
     const { Navigation } = useComponents();
 
     // Controller
     const { useScreenHooks } = useControllers();
     const { useWelcome } = useScreenHooks();
-    const { login, logout } = useWelcome(redirect, redirectLogin);
-    const { user } = login;
+    const { user, navigation } = useWelcome();
 
     return (
         <React.Fragment>
@@ -42,7 +31,7 @@ const Instructions2: FC<IGeneralProps> = (props) => {
                     </Button>
                 </View>
             </View>
-            <Navigation navigation={navigation} page="instructions" />
+            <Navigation page="instructions" />
         </React.Fragment>
     );
 }

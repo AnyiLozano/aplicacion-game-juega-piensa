@@ -19,7 +19,7 @@ const Home: FC<{ navigation: any, route: any }> = (props): JSX.Element => {
 
     return (
         <>
-            <Image source={require('../../assets/images/home.png')} style={{ width: "100%", flex: 1, resizeMode: 'stretch' }} alt="home" />
+            <Image source={require('../../assets/images/homme1.png')} style={{ width: "100%", flex: 1, resizeMode: 'stretch' }} alt="home" />
             <View style={HomeStyles.view}>
                 <Button colorScheme='red' style={HomeStyles.buttoms} onPress={() => navigation.navigate('Register')} disabled={!disabled}>
                     <Image source={require('../../assets/images/BOTON1.png')} alt="home" />
@@ -32,7 +32,7 @@ const Home: FC<{ navigation: any, route: any }> = (props): JSX.Element => {
                         <React.Fragment>
                             <Center>
                                 <Text style={HomeStyles.Politica} onPress={() => navigation.navigate('Politica')}>
-                                    Politica de privacidad
+                                    Política de privacidad
                                 </Text>
                             </Center>
                             <Alert w="100%" status="info" style={{ marginTop: "5%", backgroundColor: '#DB0862', borderRadius: 25 }}>

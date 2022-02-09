@@ -8,20 +8,12 @@ import ProveedorN3Styles from './proveedorN3.style';
 
 
 const ProveedorN3: FC<IGeneralProps> = (props) => {
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
-
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
-
     const { navigation } = props;
 
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation } = useComponents();
@@ -122,7 +114,7 @@ const ProveedorN3: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='ProveedorN4' type="error" level='level1' question='question3' show={showAlertError} />
                 <Alert navigation={navigation} view='ProveedorN4' type="success" level='level1' question='question3' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation/>
         </React.Fragment>
     );
 }

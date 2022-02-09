@@ -8,20 +8,12 @@ import Nivel24Styles from './nivel24.style';
 
 
 const Nivel24: FC<IGeneralProps> = (props) => {
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
-
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
-
     const { navigation } = props;
 
-    // Controller
+    /** Controllers */
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation, Pista } = useComponents();
@@ -52,7 +44,7 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                                         />
                                         <Text style={{ position: "absolute", right: "10%", fontSize: 20, color: "white", top: "25%" }}>
                                             {time}
-                                        </Text>
+                                        </Text>  
                                     </View>
                                 </HStack>
                             </Stack>
@@ -84,7 +76,7 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}>   
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                                 {`Tabletas de Decatileno™, que contienen en fórmula galénica cloruro de \n decualinio 0,25 mg y clorhidrato de cincocaína 0,03 mg`}
                                             </Text>
                                         </Checkbox>
@@ -93,7 +85,7 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                                 Cápsulas de Uvamín™ retard que  contienen 100 mg de nitrofurantoína
                                             </Text>
                                         </Checkbox>
@@ -102,7 +94,7 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                                 Berifén™ 1 % gel, que contiene como principio activo 10 mg de diclofenaco sódico
                                             </Text>
                                         </Checkbox>
@@ -111,10 +103,10 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}> 
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('correct')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            {`Berifén™, comprimidos recubiertos con película  gastrorresistente \n con 100 mg de diclofenaco sódico`}
+                                            <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            {`Berifén™ cápsulas de liberación prolongada con 100 mg de diclofenaco sódico`}
                                             </Text>
-                                        </Checkbox>
+                                        </Checkbox> 
                                     </HStack>
                                 </Stack>
                             </View>
@@ -125,7 +117,7 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='FelicidadesN2' type="error" level='level2' question='question4' show={showAlertError} />
                 <Alert navigation={navigation} view='FelicidadesN2' type="success" level='level2' question='question4' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation/>
         </React.Fragment>
     );
 }

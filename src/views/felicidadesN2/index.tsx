@@ -1,91 +1,94 @@
-import useControllers from "../../controllers";
-import { Button, Center, HStack, Image, Stack, Text, View } from "native-base";
-import React, { FC, useEffect } from "react";
-import FelicidadesN2Styles from './felicidades2.style'
+import useControllers from '../../controllers';
+import {Button, Center, HStack, Image, Stack, Text, View} from 'native-base';
+import React, {FC, useEffect} from 'react';
+import FelicidadesN2Styles from './felicidades2.style';
 import useComponents from '../../components/index';
-import useApi from "../../api";
+import useApi from '../../api';
 
-const FelicidadesN2: FC<{ navigation: any }> = ({ navigation }) => {
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
+const FelicidadesN2: FC<{navigation: any}> = ({navigation}) => {
+  const redirect = (): void => {
+    navigation.navigate('Home');
+  };
 
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
+  const redirectLogin = (): void => {
+    navigation.navigate('Login');
+  };
 
-    // Controller
-    const { useActions } = useApi();
-    const { dispatch, useLoginActions } = useActions();
-    const { actLevel2 } = useLoginActions();
+  // Controller
+  const {useScreenHooks} = useControllers();
+  const {useWelcome, useQuestions} = useScreenHooks();
+  const {setLevel} = useWelcome();
+  const { handleCongratulations } = useQuestions(true);
 
-    useEffect(() => {
-        dispatch(actLevel2)
-    }, [dispatch, actLevel2])
+  useEffect(() => {
+    handleCongratulations();
+    setLevel(1);
+  }, [setLevel]); 
 
-    // Components
-    const { Navigation } = useComponents();
+  // Components
+  const {Navigation} = useComponents();
 
-    return (
-        <React.Fragment>
-            <Image
-                source={require('../../assets/images/polity2.png')}
-                alt="Welcome's Background"
-                style={{ width: "100%", flex: 1, resizeMode: 'stretch' }}
-            />
-            <View style={FelicidadesN2Styles.view}>
-                <Stack style={FelicidadesN2Styles.titleContent}>
-                    <HStack display="flex" justifyContent="space-between">
-                        <View>
-                            <Image
-                                source={require('../../assets/images/felicidades.png')}
-                                alt="Welcome's Image"
-                            />
-                            <Image
-                                source={require('../../assets/images/nivel-3-3.png')}
-                                alt="Welcome's Image"
-                                style={{ marginTop: '-14%', marginLeft: '28%' }}
-                            />
-                        </View>
-                    </HStack>
-                </Stack>
-                <Stack style={FelicidadesN2Styles.tabsContent}>
-                    <HStack display="flex" justifyContent="center">
-                        <View>
-                            <Button variant="unstyled" onPress={() => navigation.navigate('Level2')}>
-                                <Image
-                                    source={require('../../assets/images/volverjugar.png')}
-                                    alt="Welcome's Image"
-                                    style={{ marginTop: '25%' }}
-                                />
-                            </Button>
-                        </View>
-                        <View>
-                            <Button variant="unstyled" onPress={() => { }}>
-                                <Image
-                                    source={require('../../assets/images/nivel-2.png')}
-                                    alt="Welcome's Image"
-                                />
-                            </Button>
-                        </View>
-                        <View>
-                            <Button variant="unstyled" onPress={() => navigation.navigate('Instrucciones1')}>
-                                <Image
-                                    source={require('../../assets/images/nivel-3.png')}
-                                    alt="Welcome's Image"
-                                    style={{ marginTop: '16%' }}
-                                />
-                            </Button>
-                        </View>
-                    </HStack>
-                </Stack>
+  return (
+    <React.Fragment>
+      <Image
+        source={require('../../assets/images/polity2.png')}
+        alt="Welcome's Background"
+        style={{width: '100%', flex: 1, resizeMode: 'stretch'}}
+      />
+      <View style={FelicidadesN2Styles.view}>
+        <Stack style={FelicidadesN2Styles.titleContent}>
+          <HStack display="flex" justifyContent="space-between">
+            <View>
+              <Image
+                source={require('../../assets/images/felicidades.png')}
+                alt="Welcome's Image"
+              />
+              <Image
+                source={require('../../assets/images/nivel-3-3.png')}
+                alt="Welcome's Image"
+                style={{marginTop: '-14%', marginLeft: '28%'}}
+              />
             </View>
-            <Navigation navigation={navigation} />
-        </React.Fragment>
-    );
-}
+          </HStack>
+        </Stack>
+        <Stack style={FelicidadesN2Styles.tabsContent}>
+          <HStack display="flex" justifyContent="center">
+            <View>
+              <Button
+                variant="unstyled"
+                onPress={() => navigation.navigate('Level2')}>
+                <Image
+                  source={require('../../assets/images/volverjugar.png')}
+                  alt="Welcome's Image"
+                  style={{marginTop: '25%'}}
+                />
+              </Button>
+            </View>
+            <View>
+              <Button variant="unstyled" onPress={() => {}}>
+                <Image
+                  source={require('../../assets/images/nivel-2.png')}
+                  alt="Welcome's Image"
+                />
+              </Button>
+            </View>
+            <View>
+              <Button
+                variant="unstyled"
+                onPress={() => navigation.navigate('Instrucciones1')}>
+                <Image
+                  source={require('../../assets/images/nivel-3.png')}
+                  alt="Welcome's Image"
+                  style={{marginTop: '16%'}}
+                />
+              </Button>
+            </View>
+          </HStack>
+        </Stack>
+      </View>
+      <Navigation />
+    </React.Fragment>
+  );
+};
 
 export default FelicidadesN2;
-
-
-

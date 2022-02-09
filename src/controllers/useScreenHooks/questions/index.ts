@@ -1,46 +1,92 @@
-import { useCallback, useEffect, useState } from "react";
+import {useCallback, useEffect, useState} from 'react';
+import {Alert} from 'react-native';
 
-const useQuestions = () => {
-    // Variables
-    let downTime: number = 15;
+const useQuestions = (runSound: boolean) => {
+  /** Audio Variables */
+  let Loser = require('../../../assets/audio/perdistes.mp3');
+  let Winner = require('../../../assets/audio/logrado.mp3');
+  let Timeout = require('../../../assets/audio/tiempo_terminado.mp3');
+  let Congratulations = require('../../../assets/audio/Felicitaciones.wav');
+  let downTime: number = 15;
+  const Sound = require('react-native-sound');
 
-    // states
-    const [time, setTime] = useState<number>(15);
-    const [showAlert, setShowAlert] = useState<boolean>(false);
-    const [showAlertTimeout, setShowAlertTimeout] = useState<boolean>(false);
-    const [showAlertError, setShowAlertError] = useState<boolean>(false);
+  /** States */
+  const [time, setTime] = useState<number>(15);
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [showAlertTimeout, setShowAlertTimeout] = useState<boolean>(false);
+  const [showAlertError, setShowAlertError] = useState<boolean>(false);
 
-    const downTimeHandler = useCallback(() => {
-        const timer = setInterval(() => {
-            if(downTime === 0){
-                clearInterval(timer);
-                setShowAlertTimeout(true);
-            }
-
-            setTime(downTime--)
-        }, 1000)
-    }, [downTime]);
-
-    const handleResponse = (res: any) => {
-        if(res === "incorrect"){
-            setShowAlertError(true);
-            console.log(res)
-        }else{
-            setShowAlert(true);
+  /** Handlers */
+  const handleResponse = (res: any) => {
+    if (res === 'incorrect') {
+      let launchLoser = new Sound(Loser, (error: boolean) => {
+        if (!error) {
+          launchLoser.play();
+          setShowAlertError(true);
+        } else {
+          Alert.alert('Falló la reproducción ...');
         }
+      });
+    } else {
+      let launchWinner = new Sound(Winner, (error: boolean) => {
+        if (!error) {
+          launchWinner.play();
+          setShowAlert(true);
+        } else {
+          Alert.alert('Falló la reproducción ...');
+        }
+      });
     }
+  };
 
-    useEffect(() => {
-        downTimeHandler();
-    }, [downTimeHandler]);
+  const handleTimeOutSound = () => {
+      let launchTimeout = new Sound(Timeout, (error: boolean) => {
+        if (!error) {
+          launchTimeout.play();
+        } else {
+          Alert.alert('Fallo la reproducción...');
+        }
+      });
+  };
 
-    return {
-        time,
-        showAlert,
-        showAlertTimeout,
-        showAlertError,
-        handleResponse
-    }
-}
+  const handleCongratulations = () => {
+    let launchCongratulations = new Sound(Congratulations, (error: boolean) => {
+      if(!error){
+        launchCongratulations.play();
+      }else{
+        Alert.alert('Fallo la reproducción...');
+      }
+    })
+  }
+
+  /** Callbacks */
+  const downTimeHandler = useCallback(() => {
+    let timer = setInterval(() => {
+      if (downTime === 0) {
+        setShowAlertTimeout(true);
+        clearInterval(timer);
+      } else {
+        setTime(downTime--);
+      }
+    }, 1000);
+  }, [downTime]);
+
+  
+
+  useEffect(() => {
+    downTimeHandler();
+    setShowAlert(false);
+    setShowAlertError(false);
+  }, []);
+
+  return {
+    time,
+    showAlert,
+    showAlertTimeout,
+    showAlertError,
+    handleResponse,
+    handleCongratulations
+  };
+};
 
 export default useQuestions;

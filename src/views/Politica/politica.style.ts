@@ -11,7 +11,9 @@ const PoliticaStyles = StyleSheet.create({
     title: {
         marginTop: '5%',
         height: 40,
-        marginBottom: '2%'
+        marginBottom: '2%',
+        fontWeight: "800"
+
     },
     title_text: {
         fontSize: 40,

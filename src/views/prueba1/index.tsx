@@ -21,13 +21,13 @@ const Prueba1: FC<IGeneralProps> = (props) => {
     // Controller
     const { useScreenHooks } = useControllers();
     const { useQuestions } = useScreenHooks();
-    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions();
+    const { time, showAlert, showAlertError, showAlertTimeout, handleResponse } = useQuestions(true);
 
     // Components
     const { Alert, Navigation } = useComponents();
 
     return (
-        <React.Fragment>
+        <React.Fragment>    
             <Image
                 source={require('../../assets/images/donfo1.png')}
                 alt="Welcome's Background"
@@ -99,7 +99,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "3.5%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                             Retirando la lámina transparente que protege una superficie gelatinosa
                                             </Text>
                                         </Checkbox>
@@ -108,7 +108,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                                 <Stack style={{ marginBottom: "3%" }}> 
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                            <Text style={{ marginLeft: "3.5%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
                                             Inyectándolo bajo la piel. Debe ser administrado por personal especializado
                                             </Text>
                                         </Checkbox>
@@ -122,7 +122,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                 <Alert navigation={navigation} view='Prueba2' type="error" level='level3' question='question1' show={showAlertError} />
                 <Alert navigation={navigation} view='Prueba2' type="success" level='level3' question='question1' show={showAlert} />
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation/>
         </React.Fragment> 
     );
 }

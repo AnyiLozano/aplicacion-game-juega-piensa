@@ -1,5 +1,6 @@
 import { Alert, Box, Button, Center, CloseIcon, HStack, IconButton, Image, InputLeftAddon, Row, SimpleGrid, Stack, Text, View, VStack, ScrollView } from 'native-base';
 import React, { FC } from "react";
+import { Dimensions } from 'react-native';
 import { Col, Grid } from "react-native-easy-grid";
 import useComponents from '../../components';
 import Navigation from '../../components/Navigation';
@@ -27,7 +28,7 @@ const Settings: FC<{ navigation: any }> = ({ navigation }) => {
 
     return (
         <ScrollView>
-            <Image source={require('../../assets/images/politicas.png')} style={{ width: "100%", flex: 1, resizeMode: 'stretch' }} alt="register" />
+            <Image source={require('../../assets/images/politicas.png')} style={{ width: "100%", height: Dimensions.get('screen').height * 0.915, flex: 1, resizeMode: 'stretch' }} alt="register" />
             <View style={SettingsStyles.view}>
                 <Center style={SettingsStyles.title}>
                     <Text style={SettingsStyles.title_text}>Configuración</Text>
@@ -50,7 +51,7 @@ const Settings: FC<{ navigation: any }> = ({ navigation }) => {
                     <Col>
                         <BasicInput
                             control={control}
-                            label="Nombres & Apellidos"
+                            label="Nombre y Apellido"
                             name="fullname"
                             placeholder=""
                             rules={{
@@ -137,7 +138,7 @@ const Settings: FC<{ navigation: any }> = ({ navigation }) => {
                 }
             </View>
 
-            <Navigation navigation={navigation} page='settings'></Navigation>
+            <Navigation page='settings'></Navigation>
         </ScrollView>
     );
 }

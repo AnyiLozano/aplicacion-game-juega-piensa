@@ -6,15 +6,6 @@ import { IGeneralProps } from "../../models/interfaces/general";
 import Level3Styles from './level3.style';
 
 const Level3: FC<IGeneralProps> = (props) => {
-    const redirect = (): void => {
-        navigation.navigate('Home');
-    }
-
-    const redirectLogin = (): void => {
-        navigation.navigate('Login');
-    }
-
-    const { navigation } = props;
 
     // Components
     const { Navigation } = useComponents();
@@ -22,8 +13,7 @@ const Level3: FC<IGeneralProps> = (props) => {
     // Controller
     const { useScreenHooks } = useControllers();
     const { useWelcome } = useScreenHooks();
-    const { login, logout } = useWelcome(redirect, redirectLogin);
-    const { user } = login;
+    const { user, navigation } = useWelcome();
 
     return (
         <React.Fragment>
@@ -42,7 +32,7 @@ const Level3: FC<IGeneralProps> = (props) => {
                     </Button>
                 </View>
             </View>
-            <Navigation navigation={navigation} />
+            <Navigation  />
         </React.Fragment>
     );
 }
