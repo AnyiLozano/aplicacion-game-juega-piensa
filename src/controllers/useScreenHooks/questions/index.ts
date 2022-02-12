@@ -3,10 +3,10 @@ import {Alert} from 'react-native';
 
 const useQuestions = (runSound: boolean) => {
   /** Audio Variables */
-  let Loser = require('../../../assets/audio/perdistes.mp3');
-  let Winner = require('../../../assets/audio/logrado.mp3');
+  let Loser = require('../../../assets/audio/perder-incorrecto-no-valido.mp3');
+  let Winner = require('../../../assets/audio/Felicitaciones.mp3');
   let Timeout = require('../../../assets/audio/tiempo_terminado.mp3');
-  let Congratulations = require('../../../assets/audio/Felicitaciones.wav');
+  let Congratulations = require('../../../assets/audio/pregunta-correcta.mp3');
   let downTime: number = 15;
   const Sound = require('react-native-sound');
 

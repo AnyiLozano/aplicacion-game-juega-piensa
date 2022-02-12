@@ -18,10 +18,12 @@ const WelcomeStyles = StyleSheet.create({
         textTransform: 'uppercase',
         color: "#F0AD1A",
         fontWeight: "900"
+
     },
     titleContent: {
         marginTop: '4%',
         paddingHorizontal: '10%'
+
     },
     tabsContent: {
         marginTop: '3%',
@@ -36,8 +38,8 @@ const WelcomeStyles = StyleSheet.create({
     },
     title_text3: {
         color: "grey",
-        width: "40%",
-        fontSize: 30,
+        width: "50%",
+        fontSize: 25,
         paddingTop: '5%',
         lineHeight: 30
     },

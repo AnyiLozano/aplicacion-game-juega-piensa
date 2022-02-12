@@ -5,7 +5,7 @@ import useSettingsProviders from './settings';
 import useGeneralProviders from './general';
 
 const useProviders = () => {
-    axios.defaults.baseURL = "http://192.168.10.14:8000/api";
+    axios.defaults.baseURL = "https://api-game-uvamin.emlproyectos.com.co/api";
     
     return {
         useRegisterProviders,

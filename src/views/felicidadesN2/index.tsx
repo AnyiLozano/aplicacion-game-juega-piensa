@@ -4,6 +4,8 @@ import React, {FC, useEffect} from 'react';
 import FelicidadesN2Styles from './felicidades2.style';
 import useComponents from '../../components/index';
 import useApi from '../../api';
+import Sound from 'react-native-sound';
+import { Alert } from 'react-native';
 
 const FelicidadesN2: FC<{navigation: any}> = ({navigation}) => {
   const redirect = (): void => {
@@ -21,7 +23,13 @@ const FelicidadesN2: FC<{navigation: any}> = ({navigation}) => {
   const { handleCongratulations } = useQuestions(true);
 
   useEffect(() => {
-    handleCongratulations();
+    let launchCongratulations = new Sound(require('../../assets/audio/pregunta-correcta.mp3'), (error: boolean) => {
+      if(!error){
+        launchCongratulations.play();
+      }else{
+        Alert.alert('Fallo la reproducción...');
+      }
+    })
     setLevel(1);
   }, [setLevel]); 
 

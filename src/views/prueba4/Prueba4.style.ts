@@ -33,7 +33,8 @@ const Prueba4Styles = StyleSheet.create({
         color: "white",
         marginTop: '10%',
         width: "80%",
-        textAlign: "center"
+        textAlign: "center",
+
     },
     button: {
         backgroundColor: '#7AC943',

@@ -3,6 +3,7 @@ import { Button, Center, HStack, Image, Stack, Text, View } from "native-base";
 import React, { FC, useCallback, useEffect, useState } from "react";
 import useComponents from '../../components/index';
 import ConteoStyles from "./conteo.style";
+import Sound from "react-native-sound";
 
 const Conteo: FC<{ navigation: any }> = ({ navigation }) => {
     // States
@@ -12,10 +13,19 @@ const Conteo: FC<{ navigation: any }> = ({ navigation }) => {
 
     // Lets
     let step: number = 1;
+    let Sound = require('react-native-sound');
+    let CronometerSound = require('../../assets/audio/inciar-3-2-1.mp3');
 
     // Constants
     const changeSteps = useCallback(() => {
         const i = setInterval(() => {
+            let launchConometerSound = new Sound(CronometerSound, (error: boolean) => {
+                if(!error){
+                    launchConometerSound.play();
+                }else{
+                    console.log('No se pudo cargar el audio');
+                }
+            });
             if (step === 1) {
                 setShowTree(true);
                 step++;

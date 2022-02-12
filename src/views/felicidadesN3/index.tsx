@@ -3,17 +3,24 @@ import {Button, Center, HStack, Image, Stack, Text, View} from 'native-base';
 import React, {FC, useEffect} from 'react';
 import FelicidadesN3Styles from './felicidades3.style';
 import useComponents from '../../components/index';
+import Sound from 'react-native-sound';
+import { Alert } from 'react-native';
 
 const FelicidadesN3: FC<{navigation: any}> = ({}) => {
   // Controller
   const {useScreenHooks} = useControllers();
-  const {useWelcome, useQuestions} = useScreenHooks();
+  const {useWelcome} = useScreenHooks();
   const {user, navigation} = useWelcome();
-  const {handleCongratulations} = useQuestions(true);
 
   useEffect(() => {
-    handleCongratulations();
-  }, [handleCongratulations]);
+    let launchCongratulations = new Sound(require('../../assets/audio/pregunta-correcta.mp3'), (error: boolean) => {
+      if(!error){
+        launchCongratulations.play();
+      }else{
+        Alert.alert('Fallo la reproducción...');
+      }
+    })
+  }, []);
 
   // Components
   const {Navigation} = useComponents();

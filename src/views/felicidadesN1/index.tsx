@@ -6,26 +6,26 @@ import useComponents from '../../components/index';
 import useApi from '../../api';
 import useModels from '../../models/index';
 import {useSelector} from 'react-redux';
+import Sound from 'react-native-sound';
+import { Alert } from 'react-native';
 
 const FelicidadesN1: FC<{navigation: any}> = ({navigation}) => {
-  const redirect = (): void => {
-    navigation.navigate('Home');
-  };
-
-  const redirectLogin = (): void => {
-    navigation.navigate('Login');
-  };
 
   // Controller
   const {useScreenHooks} = useControllers();
-  const {useWelcome, useQuestions} = useScreenHooks();
+  const {useWelcome} = useScreenHooks();
   const {setLevel} = useWelcome();
-  const { handleCongratulations } = useQuestions(true);
 
   useEffect(() => {
-    handleCongratulations();
     setLevel(1);
-  }, [setLevel]);
+    let launchCongratulations = new Sound(require('../../assets/audio/pregunta-correcta.mp3'), (error: boolean) => {
+      if(!error){
+        launchCongratulations.play();
+      }else{
+        Alert.alert('Fallo la reproducción...');
+      }
+    })
+  }, []);
 
   // Components
   const {Navigation} = useComponents();

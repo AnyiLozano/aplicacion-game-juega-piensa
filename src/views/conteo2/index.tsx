@@ -12,9 +12,18 @@ const Conteo2: FC<{ navigation: any }> = ({ navigation }) => {
 
     // Lets
     let step: number = 1;
+    const Sound = require('react-native-sound');
+    let CronometerSound = require('../../assets/audio/inciar-3-2-1.mp3');
 
     // Constants
     const changeSteps = useCallback(() => {
+        let launchConometerSound = new Sound(CronometerSound, (error: boolean) => {
+            if(!error){
+                launchConometerSound.play();
+            }else{
+                console.log('No se pudo cargar el audio');
+            }
+        });
         const i = setInterval(() => {
             if (step === 1) {
                 setShowTree(true);
@@ -92,7 +101,7 @@ const Conteo2: FC<{ navigation: any }> = ({ navigation }) => {
                     </HStack>
                 </Stack>
             </View>
-            <Navigation navigation={navigation}/>
+            <Navigation/>
         </React.Fragment>
     );
 }

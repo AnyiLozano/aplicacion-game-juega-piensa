@@ -29,8 +29,10 @@ const Welcome: FC = () => {
               <Text style={WelcomeStyles.title_text2}>
                 ¡Hola, {user.fullname}!
               </Text>
-              <Text style={WelcomeStyles.title_text3}>
-                Bienvenido a Villa Dolores.
+              <Text style={WelcomeStyles.title_text3} 
+               
+              >
+              {`Bienvenido a  Villa Dolores`}
               </Text>
             </View>
             <Image
