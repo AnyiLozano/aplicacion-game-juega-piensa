@@ -64,7 +64,7 @@ const Nivel2: FC<IGeneralProps> = (props) => {
                         </View>
                         <Stack style={Nivel2Styles.image}>
                             <HStack display="flex" justifyContent="space-between" alignItems="center">
-                                <View style={{ paddingTop: "5%" }}>
+                                <View style={{ paddingTop: "5%", marginLeft: "-8%" }}>
                                     <Image
                                         source={require('../../assets/images/barraProgreso.png')}
                                         alt="Welcome's Image"
@@ -121,9 +121,9 @@ const Nivel2: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack>
                 </Stack>
-                <Alert navigation={navigation} view='Nivel22' type="timeout" level='level2' question='question1' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='Nivel22' type="error" level='level2' question='question1' show={showAlertError} />
-                <Alert navigation={navigation} view='Nivel22' type="success" level='level2' question='question1' show={showAlert} />
+                <Alert view={() => navigation.navigate("Nivel22")} type="timeout" level='level2' question='question1' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("Nivel22")} type="error" level='level2' question='question1' show={showAlertError} />
+                <Alert view={() => navigation.navigate("Nivel22")} type="success" level='level2' question='question1' show={showAlert} />
             </View>
             <Navigation/>
         </React.Fragment>

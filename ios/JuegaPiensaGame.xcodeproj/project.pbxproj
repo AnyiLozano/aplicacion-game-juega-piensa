@@ -43,6 +43,7 @@
 		ABFE59519B596E51CEFDCCC0 /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuegaPiensaGame-JuegaPiensaGameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A881CF5CF3F2B244570E2A /* Pods-JuegaPiensaGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGame.debug.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-JuegaPiensaGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGame.release.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame.release.xcconfig"; sourceTree = "<group>"; };
+		E3C95B9027BB1C8600012856 /* JuegaPiensaGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = JuegaPiensaGame.entitlements; path = JuegaPiensaGame/JuegaPiensaGame.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -86,6 +87,7 @@
 		13B07FAE1A68108700A75B9A /* JuegaPiensaGame */ = {
 			isa = PBXGroup;
 			children = (
+				E3C95B9027BB1C8600012856 /* JuegaPiensaGame.entitlements */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -145,7 +147,6 @@
 				6C97AB639B58BBB4B15BBE30 /* Pods-JuegaPiensaGame-JuegaPiensaGameTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-JuegaPiensaGame-JuegaPiensaGameTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -160,8 +161,8 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */,
 				4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */,
+				E3266983A7675E23E7A3F3B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,8 +184,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */,
 				ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */,
+				41924D513EEAE8F4AD05E79F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,23 +266,6 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +286,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41924D513EEAE8F4AD05E79F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */ = {
@@ -360,21 +361,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */ = {
+		E3266983A7675E23E7A3F3B4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -484,22 +485,33 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = JuegaPiensaGame/JuegaPiensaGame.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = G7UVT4F83A;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = JuegaPiensaGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juega-piensa";
 				PRODUCT_NAME = JuegaPiensaGame;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -510,20 +522,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = JuegaPiensaGame/JuegaPiensaGame.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G7UVT4F83A;
 				INFOPLIST_FILE = JuegaPiensaGame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.juega-piensa";
 				PRODUCT_NAME = JuegaPiensaGame;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -561,7 +584,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -627,7 +650,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

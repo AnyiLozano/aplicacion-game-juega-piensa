@@ -43,7 +43,7 @@ const Login: FC<{navigation: any}> = ({navigation}) => {
         source={require('../../assets/images/Group.png')}
         style={{
           width: '100%',
-          height: Dimensions.get('screen').height * 0.915,
+          height: Dimensions.get('screen').height,
           flex: 1,
           resizeMode: 'stretch',
         }}

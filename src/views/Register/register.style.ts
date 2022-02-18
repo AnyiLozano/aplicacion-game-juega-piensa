@@ -20,7 +20,7 @@ const RegisterStyles = StyleSheet.create({
     },
     containerInputs: {
         paddingHorizontal: "8%",
-        marginTop: "5%"
+        marginTop: "14%"
     },
     containerInputs2: {
         paddingHorizontal: "8%",

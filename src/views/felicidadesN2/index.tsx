@@ -30,7 +30,7 @@ const FelicidadesN2: FC<{navigation: any}> = ({navigation}) => {
         Alert.alert('Fallo la reproducción...');
       }
     })
-    setLevel(1);
+    setLevel(2);
   }, [setLevel]); 
 
   // Components
@@ -54,7 +54,7 @@ const FelicidadesN2: FC<{navigation: any}> = ({navigation}) => {
               <Image
                 source={require('../../assets/images/nivel-3-3.png')}
                 alt="Welcome's Image"
-                style={{marginTop: '-14%', marginLeft: '28%'}}
+                style={{marginTop: '-18%', marginLeft: '23%'}}
               />
             </View>
           </HStack>

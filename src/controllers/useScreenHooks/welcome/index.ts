@@ -54,8 +54,17 @@ const useWelcome = () => {
     };
 
     dispatch(actSetLevels(request)) 
-
   };
+
+  /** Effects */
+  useEffect(() => {
+    const request: ICallback = {
+      onError: (error: any) => console.log(error),
+      onSuccess: (data: any) => console.log(data),
+    };
+
+    dispatch(actGetLevels(request));
+  }, [dispatch]);
 
   return {
     user,

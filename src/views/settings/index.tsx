@@ -28,7 +28,7 @@ const Settings: FC<{ navigation: any }> = ({ navigation }) => {
 
     return (
         <ScrollView>
-            <Image source={require('../../assets/images/politicas.png')} style={{ width: "100%", height: Dimensions.get('screen').height * 0.915, flex: 1, resizeMode: 'stretch' }} alt="register" />
+            <Image source={require('../../assets/images/politicas.png')} style={{ width: "100%", height: Dimensions.get('screen').height, flex: 1, resizeMode: 'stretch' }} alt="register" />
             <View style={SettingsStyles.view}>
                 <Center style={SettingsStyles.title}>
                     <Text style={SettingsStyles.title_text}>Configuración</Text>

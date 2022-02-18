@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const SettingsStyles = StyleSheet.create({
     view: {
         position: "absolute",
-        top: '7.5%',
+        top: '12%',
         left: '5.5%',
         width: '89%',
         height: '85%'

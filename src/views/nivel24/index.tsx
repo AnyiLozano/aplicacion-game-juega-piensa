@@ -56,7 +56,7 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                         </View>
                         <Stack style={Nivel24Styles.image}>
                             <HStack display="flex" justifyContent="space-between" alignItems="center">
-                                <View style={{ paddingTop: "5%" }}>
+                                <View style={{ paddingTop: "5%", marginLeft: "-7%" }}>
                                     <Image
                                         source={require('../../assets/images/barra4.png')}
                                         alt="Welcome's Image"
@@ -73,34 +73,34 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                                 />
                             </View>
                             <View style={{ paddingTop: "1%" }}>
-                                <Stack style={{ marginBottom: "3%" }}>   
+                                <Stack style={{ marginBottom: "1%" }}>   
+                                    <HStack>
+                                        <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
+                                            <Text style={{ marginLeft: "1%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
+                                                {`Tabletas de Decatileno™, que contienen en fórmula galénica \n cloruro de  decualinio 0,25 mg y clorhidrato \n  de cincocaína 0,03 mg`}
+                                            </Text>
+                                        </Checkbox>
+                                    </HStack>
+                                </Stack>  
+                                <Stack style={{ marginBottom: "2%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                                {`Tabletas de Decatileno™, que contienen en fórmula galénica cloruro de \n decualinio 0,25 mg y clorhidrato de cincocaína 0,03 mg`}
+                                                {`Cápsulas de Uvamín™ retard que  contienen \n 100 mg de nitrofurantoína`}
                                             </Text>
                                         </Checkbox>
                                     </HStack>
                                 </Stack>
-                                <Stack style={{ marginBottom: "3%" }}>
-                                    <HStack>
-                                        <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
-                                            <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                                Cápsulas de Uvamín™ retard que  contienen 100 mg de nitrofurantoína
-                                            </Text>
-                                        </Checkbox>
-                                    </HStack>
-                                </Stack>
-                                <Stack style={{ marginBottom: "3%" }}>
+                                <Stack style={{ marginBottom: "2%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                                Berifén™ 1 % gel, que contiene como principio activo 10 mg de diclofenaco sódico
+                                                {`Berifén™ 1 % gel, que contiene como principio activo \n 10 mg de diclofenaco sódico`}
                                             </Text>
                                         </Checkbox>
                                     </HStack>
                                 </Stack>
-                                <Stack style={{ marginBottom: "3%" }}> 
+                                <Stack style={{ marginBottom: "2%" }}>  
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('correct')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
@@ -113,9 +113,9 @@ const Nivel24: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack>
                 </Stack>
-                <Alert navigation={navigation} view='FelicidadesN2' type="timeout" level='level2' question='question4' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='FelicidadesN2' type="error" level='level2' question='question4' show={showAlertError} />
-                <Alert navigation={navigation} view='FelicidadesN2' type="success" level='level2' question='question4' show={showAlert} />
+                <Alert view={() => navigation.navigate("FelicidadesN2")} type="timeout" level='level2' question='question4' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("FelicidadesN2")} type="error" level='level2' question='question4' show={showAlertError} />
+                <Alert view={() => navigation.navigate("FelicidadesN2")} type="success" level='level2' question='question4' show={showAlert} />
             </View>
             <Navigation/>
         </React.Fragment>

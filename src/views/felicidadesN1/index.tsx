@@ -48,7 +48,7 @@ const FelicidadesN1: FC<{navigation: any}> = ({navigation}) => {
               <Image
                 source={require('../../assets/images/felicidadtext.png')}
                 alt="Welcome's Image"
-                style={{marginTop: '-14%', marginLeft: '30%'}}
+                style={{marginTop: '-19.5%', marginLeft: '22%'}}
               />
             </View>
           </HStack>

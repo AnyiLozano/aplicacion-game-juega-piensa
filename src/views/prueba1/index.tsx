@@ -77,7 +77,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                                     alt="Welcome's Image"
                                 />
                             </View>
-                            <View style={{ paddingTop: "2%" }}>
+                            <View style={{ paddingTop: "3%", marginLeft: "-2%"  }}>
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
@@ -100,7 +100,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "3.5%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Retirando la lámina transparente que protege una superficie gelatinosa
+                                            {`Retirando la lámina transparente que protege \n una superficie gelatinosa`}
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -109,7 +109,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "3.5%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Inyectándolo bajo la piel. Debe ser administrado por personal especializado
+                                            {`Inyectándolo bajo la piel. Debe ser administrado \n por personal especializado`}
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -118,9 +118,9 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack> 
                 </Stack>
-                <Alert navigation={navigation} view='Prueba2' type="timeout" level='level3' question='question1' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='Prueba2' type="error" level='level3' question='question1' show={showAlertError} />
-                <Alert navigation={navigation} view='Prueba2' type="success" level='level3' question='question1' show={showAlert} />
+                <Alert view={() => navigation.navigate("Prueba2")} type="timeout" level='level3' question='question1' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("Prueba2")} type="error" level='level3' question='question1' show={showAlertError} />
+                <Alert view={() => navigation.navigate("Prueba2")} type="success" level='level3' question='question1' show={showAlert} />
             </View>
             <Navigation/>
         </React.Fragment> 

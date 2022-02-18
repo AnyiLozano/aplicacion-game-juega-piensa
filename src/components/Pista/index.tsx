@@ -4,14 +4,11 @@ import PistaAssets from './assets';
 
 const Pista: FC<{ question: string }> = ({ question }): JSX.Element => {
     // States
-    const [showImage3, setShowImage3] = useState(false);
     const [showImage2, setShowImage2] = useState(false);
     const [showImage1, setShowImage1] = useState(undefined);
     const [start, setStart] = useState<boolean>(false);
 
     const pista = PistaAssets.find((item: any) => item.question === question);
-    console.log("uno", showImage1)
-    console.log("dos", showImage2)
 
     let time = 1;
 

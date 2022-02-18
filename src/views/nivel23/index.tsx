@@ -64,7 +64,7 @@ const Nivel23: FC<IGeneralProps> = (props) => {
                         </View>
                         <Stack style={Nivel23Styles.image}>
                             <HStack display="flex" justifyContent="space-between" alignItems="center">
-                                <View style={{ paddingTop: "5%" }}>
+                                <View style={{ paddingTop: "5%", marginLeft: "-7%" }}>
                                     <Image
                                         source={require('../../assets/images/barra3.png')}
                                         alt="Welcome's Image"
@@ -112,7 +112,7 @@ const Nivel23: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "2.5%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                                Berifén™ 50 mg, comprimidos gastrorresistentes recubiertos con película
+                                                {`Berifén™ 50 mg, comprimidos gastrorresistentes \n recubiertos con película`}
                                             </Text>
                                         </Checkbox>  
                                     </HStack>
@@ -121,9 +121,9 @@ const Nivel23: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack>
                 </Stack>
-                <Alert navigation={navigation} view='Nivel24' type="timeout" level='level2' question='question3' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='Nivel24' type="error" level='level2' question='question3' show={showAlertError} />
-                <Alert navigation={navigation} view='Nivel24' type="success" level='level2' question='question3' show={showAlert} />
+                <Alert view={() => navigation.navigate("Nivel24")} type="timeout" level='level2' question='question3' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("Nivel24")} type="error" level='level2' question='question3' show={showAlertError} />
+                <Alert view={() => navigation.navigate("Nivel24")} type="success" level='level2' question='question3' show={showAlert} />
             </View>
             <Navigation/>
         </React.Fragment>

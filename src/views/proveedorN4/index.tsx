@@ -110,9 +110,9 @@ const ProveedorN4: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack>
                 </Stack>
-                <Alert navigation={navigation} view='FelicidadesN1' type="timeout" level='level1' question='question4' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='FelicidadesN1' type="error" level='level1' question='question4' show={showAlertError} />
-                <Alert navigation={navigation} view='FelicidadesN1' type="success" level='level1' question='question4' show={showAlert} />
+                <Alert view={() => navigation.navigate("FelicidadesN1")} type="timeout" level='level1' question='question4' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("FelicidadesN1")} type="error" level='level1' question='question4' show={showAlertError} />
+                <Alert view={() => navigation.navigate("FelicidadesN1")} type="success" level='level1' question='question4' show={showAlert} />
             </View>
             <Navigation />
         </React.Fragment>

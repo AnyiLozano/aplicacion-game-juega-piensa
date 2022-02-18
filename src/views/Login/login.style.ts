@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const LoginStyles = StyleSheet.create({
     view: {
         position: "absolute",
-        top: '7.5%',
+        top: '14%',
         left: '5.5%',
         width: '89%',
         height: '85%'

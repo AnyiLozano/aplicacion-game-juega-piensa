@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const FelicidadesN1Styles = StyleSheet.create({
     view: {
         position: "absolute",
-        top: '4%',
+        top: '7%',
         left: '4.5%',
         width: '91%',
         height: '77.5%',

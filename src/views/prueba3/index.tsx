@@ -82,7 +82,7 @@ const Prueba3: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={(isSelected: boolean) => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Tomándolo con abundante agua durante o después de las comidas
+                                            {`Tomándolo con abundante agua durante o después \n de las comidas`}
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -109,9 +109,9 @@ const Prueba3: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack> 
                 </Stack>
-                <Alert navigation={navigation} view='Prueba4' type="timeout" level='level3' question='question3' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='Prueba4' type="error" level='level3' question='question3' show={showAlertError} />
-                <Alert navigation={navigation} view='Prueba4' type="success" level='level3' question='question3' show={showAlert} />
+                <Alert view={() => navigation.navigate("Prueba4")} type="timeout" level='level3' question='question3' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("Prueba4")} type="error" level='level3' question='question3' show={showAlertError} />
+                <Alert view={() => navigation.navigate("Prueba4")} type="success" level='level3' question='question3' show={showAlert} />
             </View>
             <Navigation/>
         </React.Fragment> 

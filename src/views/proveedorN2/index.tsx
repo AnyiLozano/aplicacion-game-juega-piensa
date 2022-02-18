@@ -82,7 +82,7 @@ const ProveedorN2: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Berifén™ 1 % Gel: 50 g y 200 g
+                                                Berifén™ 1 % Gel: 50 g y 200 g
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -91,7 +91,7 @@ const ProveedorN2: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('correct')}>
                                             <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Berifén™ 1 % Gel: 20 g y 50 g
+                                                Berifén™ 1 % Gel: 20 g y 50 g
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -100,7 +100,7 @@ const ProveedorN2: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Berifén™ 1 % Gel: 2 g y 5 g
+                                                Berifén™ 1 % Gel: 2 g y 5 g
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -109,7 +109,7 @@ const ProveedorN2: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "4%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Berifén™ 1 % Gel: 10 g y 100 g
+                                                Berifén™ 1 % Gel: 10 g y 100 g
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -118,9 +118,9 @@ const ProveedorN2: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack>
                 </Stack>
-                <Alert navigation={navigation} view='ProveedorN3' type="timeout" level='level1' question='question2' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='ProveedorN3' type="error" level='level1' question='question2' show={showAlertError} />
-                <Alert navigation={navigation} view='ProveedorN3' type="success" level='level1' question='question2' show={showAlert} />
+                <Alert view={() => navigation.navigate("ProveedorN3")} type="timeout" level='level1' question='question2' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("ProveedorN3")} type="error" level='level1' question='question2' show={showAlertError} />
+                <Alert view={() => navigation.navigate("ProveedorN3")} type="success" level='level1' question='question2' show={showAlert} />
             </View>
             <Navigation />
         </React.Fragment>

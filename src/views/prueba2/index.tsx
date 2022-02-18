@@ -82,16 +82,16 @@ const Prueba2: FC<IGeneralProps> = (props) => {
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('correct')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Tomándolo con abundante agua durante o después de las comidas
+                                            {`Tomándolo con abundante agua durante o \n después de las comidas`}
                                             </Text>
-                                        </Checkbox>
+                                        </Checkbox> 
                                     </HStack>
                                 </Stack>
                                 <Stack style={{ marginBottom: "3%" }}>
                                     <HStack>
                                         <Checkbox value='' colorScheme='orange' style={{ borderColor: "orange", width: 25, height: 25 }} onChange={() => handleResponse('incorrect')}>
                                             <Text style={{ marginLeft: "3%", borderBottomColor: "orange", borderBottomWidth: 1 }}>
-                                            Tomándolo durante las primeras horas de la mañana, en ayunas
+                                            {`Tomándolo durante las primeras horas de la mañana, \n en ayunas`}
                                             </Text>
                                         </Checkbox>
                                     </HStack>
@@ -118,9 +118,9 @@ const Prueba2: FC<IGeneralProps> = (props) => {
                         </Stack>
                     </HStack> 
                 </Stack>
-                <Alert navigation={navigation} view='Prueba3' type="timeout" level='level3' question='question2' show={showAlertTimeout} />
-                <Alert navigation={navigation} view='Prueba3' type="error" level='level3' question='question2' show={showAlertError} />
-                <Alert navigation={navigation} view='Prueba3' type="success" level='level3' question='question2' show={showAlert} />
+                <Alert view={() => navigation.navigate("Prueba3")} type="timeout" level='level3' question='question2' show={showAlertTimeout} />
+                <Alert view={() => navigation.navigate("Prueba3")} type="error" level='level3' question='question2' show={showAlertError} />
+                <Alert view={() => navigation.navigate("Prueba3")} type="success" level='level3' question='question2' show={showAlert} />
             </View>
             <Navigation/>
         </React.Fragment> 

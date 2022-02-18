@@ -19,13 +19,6 @@ const Conteo1: FC<{ navigation: any }> = ({ navigation }) => {
     const changeSteps = useCallback(() => {
         const i = setInterval(() => {
             if (step === 1) {
-                let launchConometerSound = new Sound(CronometerSound, (error: boolean) => {
-                    if(!error){
-                        launchConometerSound.play();
-                    }else{
-                        console.log('No se pudo cargar el audio');
-                    }
-                });
                 setShowTree(true);
                 step++;
             } else if (step === 2) {
@@ -43,6 +36,13 @@ const Conteo1: FC<{ navigation: any }> = ({ navigation }) => {
 
     // Effects
     useEffect(() => {
+        let launchConometerSound = new Sound(CronometerSound, (error: boolean) => {
+            if(!error){
+                launchConometerSound.play();
+            }else{
+                console.log('No se pudo cargar el audio');
+            }
+        });
         changeSteps();
     }, [changeSteps]);
 

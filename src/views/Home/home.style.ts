@@ -14,7 +14,7 @@ const HomeStyles = StyleSheet.create({
         color:  '#7A7A7C'
     },
     view: {
-        width: '25%',
+        width: '30%',
         position: "absolute",
         top: '35%',
         right: '12%'
