@@ -2,7 +2,6 @@ import { Dispatch } from "redux";
 import { IActionLogin, IActionLogout } from "../../../models/interfaces/login";
 import useServices from "../../services";
 import { LOGIN } from '../../../types';
-import { ICallback } from "../../../models/interfaces/general";
 
 const useLoginActions = () => {
     // Services

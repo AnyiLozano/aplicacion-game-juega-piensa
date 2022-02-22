@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		6172F2D35A4C3AA820D92908 /* libPods-JuegaPiensaGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-JuegaPiensaGame.a */; };
-		7EF68E3733C33B6898317E18 /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a */; };
+		436BC0421C73F8136EA6B93B /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2108857989C120BE91D27FD /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		EF4DE04A1A8A15000BC50B3B /* libPods-JuegaPiensaGame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D24E0A94C2452204FEDC81C9 /* libPods-JuegaPiensaGame.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +37,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = JuegaPiensaGame/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = JuegaPiensaGame/main.m; sourceTree = "<group>"; };
 		1D0AE47A65C8663E3B452821 /* Pods-JuegaPiensaGame-JuegaPiensaGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGame-JuegaPiensaGameTests.release.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests.release.xcconfig"; sourceTree = "<group>"; };
-		6423831EA8574132BED9D8CC /* libPods-JuegaPiensaGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuegaPiensaGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		564C67127436A08330D91691 /* Pods-JuegaPiensaGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGameTests.debug.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGameTests/Pods-JuegaPiensaGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-JuegaPiensaGame-JuegaPiensaGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGame-JuegaPiensaGameTests.debug.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGame-JuegaPiensaGameTests/Pods-JuegaPiensaGame-JuegaPiensaGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = JuegaPiensaGame/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ABFE59519B596E51CEFDCCC0 /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuegaPiensaGame-JuegaPiensaGameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B62A5E10F930F5BE8AAB847 /* Pods-JuegaPiensaGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGameTests.release.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGameTests/Pods-JuegaPiensaGameTests.release.xcconfig"; sourceTree = "<group>"; };
 		C0A881CF5CF3F2B244570E2A /* Pods-JuegaPiensaGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGame.debug.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame.debug.xcconfig"; sourceTree = "<group>"; };
+		C2108857989C120BE91D27FD /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuegaPiensaGame-JuegaPiensaGameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00AAFFCFCFDA5787532823F /* Pods-JuegaPiensaGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JuegaPiensaGame.release.xcconfig"; path = "Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame.release.xcconfig"; sourceTree = "<group>"; };
+		D24E0A94C2452204FEDC81C9 /* libPods-JuegaPiensaGame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JuegaPiensaGame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C95B9027BB1C8600012856 /* JuegaPiensaGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = JuegaPiensaGame.entitlements; path = JuegaPiensaGame/JuegaPiensaGame.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -52,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF68E3733C33B6898317E18 /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a in Frameworks */,
+				436BC0421C73F8136EA6B93B /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6172F2D35A4C3AA820D92908 /* libPods-JuegaPiensaGame.a in Frameworks */,
+				EF4DE04A1A8A15000BC50B3B /* libPods-JuegaPiensaGame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				6423831EA8574132BED9D8CC /* libPods-JuegaPiensaGame.a */,
-				ABFE59519B596E51CEFDCCC0 /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a */,
+				D24E0A94C2452204FEDC81C9 /* libPods-JuegaPiensaGame.a */,
+				C2108857989C120BE91D27FD /* libPods-JuegaPiensaGame-JuegaPiensaGameTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +148,8 @@
 				D00AAFFCFCFDA5787532823F /* Pods-JuegaPiensaGame.release.xcconfig */,
 				6C97AB639B58BBB4B15BBE30 /* Pods-JuegaPiensaGame-JuegaPiensaGameTests.debug.xcconfig */,
 				1D0AE47A65C8663E3B452821 /* Pods-JuegaPiensaGame-JuegaPiensaGameTests.release.xcconfig */,
+				564C67127436A08330D91691 /* Pods-JuegaPiensaGameTests.debug.xcconfig */,
+				8B62A5E10F930F5BE8AAB847 /* Pods-JuegaPiensaGameTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -161,8 +165,8 @@
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */,
-				E3266983A7675E23E7A3F3B4 /* [CP] Embed Pods Frameworks */,
+				E0089C6F3835C5BDC024AF16 /* [CP] Embed Pods Frameworks */,
+				4F6D285B913104F07DC9D8EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,8 +188,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */,
-				41924D513EEAE8F4AD05E79F /* [CP] Embed Pods Frameworks */,
+				1197D550530966696DE4432A /* [CP] Embed Pods Frameworks */,
+				A4F63F0FDF49ADB9E041A753 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,7 +218,7 @@
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "JuegaPiensaGame" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -266,6 +270,23 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
+		1197D550530966696DE4432A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,24 +309,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		41924D513EEAE8F4AD05E79F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */ = {
+		4F6D285B913104F07DC9D8EB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -344,7 +348,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */ = {
+		A4F63F0FDF49ADB9E041A753 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,7 +365,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JuegaPiensaGame/Pods-JuegaPiensaGame-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E3266983A7675E23E7A3F3B4 /* [CP] Embed Pods Frameworks */ = {
+		E0089C6F3835C5BDC024AF16 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -509,9 +513,10 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -545,8 +550,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

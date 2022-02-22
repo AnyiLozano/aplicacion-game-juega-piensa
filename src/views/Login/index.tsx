@@ -1,20 +1,10 @@
 import {
-  Alert,
-  Box,
   Button,
   Center,
-  CloseIcon,
-  HStack,
-  IconButton,
   Image,
-  InputLeftAddon,
-  Row,
   ScrollView,
-  SimpleGrid,
-  Stack,
   Text,
   View,
-  VStack,
 } from 'native-base';
 import React, {FC} from 'react';
 import {Dimensions} from 'react-native';
@@ -32,8 +22,6 @@ const Login: FC<{navigation: any}> = ({navigation}) => {
   // Controllers
   const {useScreenHooks} = useControllers();
   const {useRegister, useLogin} = useScreenHooks();
-  const {isValid, isError, setShowAlert, showAlert, subtitleAlert, titleAlert} =
-    useRegister({navigation});
 
   const {control, handleLogin, handleSubmit} = useLogin(navigation);
 
@@ -67,9 +55,14 @@ const Login: FC<{navigation: any}> = ({navigation}) => {
               onPress={handleSubmit(handleLogin)}>
               <Text style={LoginStyles.button_text}>{'Continuar >'}</Text>
             </Button>
+            <Button
+              style={[LoginStyles.button, { marginTop: '5%' }]}
+              onPress={() => navigation.navigate('Home')}>
+              <Text style={LoginStyles.button_text}>{' < Regresar '}</Text>
+            </Button>
           </Center>
         </Col>
-      </View>
+      </View>   
     </ScrollView>
   );
 };

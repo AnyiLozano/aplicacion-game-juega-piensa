@@ -97,6 +97,12 @@ const Register: FC<{ navigation: any }> = ({ navigation }) => {
                     >
                         <Text style={RegisterStyles.button_text}>{"Continuar >"}</Text>
                     </Button>
+                    <Button 
+                        style={[RegisterStyles.button , { marginTop: '2%' }]}
+                        onPress={() => navigation.navigate('Home')}
+                    >
+                        <Text style={RegisterStyles.button_text}>{"< Regresar"}</Text>
+                    </Button>
                 </Center>
                 {
                     showAlert && (

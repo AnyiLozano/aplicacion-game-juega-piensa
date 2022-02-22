@@ -57,7 +57,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                                 </HStack>
                             </Stack>
                             <Image
-                                source={require('../../assets/images/niño.png')}
+                                source={require('../../assets/images/nino.png')}
                                 alt="Welcome's Image"
                                 style={{ marginLeft: "30%", marginTop: "5%" }}
                             />
@@ -73,7 +73,7 @@ const Prueba1: FC<IGeneralProps> = (props) => {
                             </HStack>
                             <View style={{ paddingTop: "4%" }}>
                                 <Image
-                                    source={require('../../assets/images/niño2.png')}
+                                    source={require('../../assets/images/nino2.png')}
                                     alt="Welcome's Image"
                                 />
                             </View>

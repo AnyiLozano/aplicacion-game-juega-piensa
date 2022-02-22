@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
-import { IActionEditUser } from '../../../models/interfaces/settings';
 import useSelectors from '../../../models/selectors';
 import { LOGIN } from '../../../types';
 import useServices from '../../services';
@@ -15,7 +14,7 @@ const useSettingsActions = () => {
     const { loginSelector } = useLoginSelectors();
     const login = useSelector(loginSelector);
 
-    const actEditUser = (request: IActionEditUser) => async(dispatch: Dispatch) => {
+    const actEditUser = (request: any) => async(dispatch: Dispatch) => {
         const { req, onError, onSuccess } = request;
 
         try {

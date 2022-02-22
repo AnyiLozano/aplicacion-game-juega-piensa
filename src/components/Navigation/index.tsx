@@ -1,5 +1,6 @@
 import {Button, HStack, Image, Stack, Text, View} from 'native-base';
 import React, {FC} from 'react';
+import { width } from 'styled-system';
 import useControllers from '../../controllers';
 import {INavigationProps} from '../../models/interfaces/components/Navigation';
 import NavigationStyles from './navigation.style';
@@ -20,6 +21,7 @@ const Navigation: FC<INavigationProps> = props => {
           <Image
             source={require('../../assets/images/iconUser.png')}
             alt="User's Icon"
+            style={{width: 30, height: 30}}
           />
           <Text style={{color: 'white', marginLeft: '2%', width: '40%'}}>
             {user?.fullname}
