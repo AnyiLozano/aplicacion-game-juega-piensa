@@ -9,31 +9,35 @@ const useLoginActions = () => {
     const { loginServices } = useLoginServices();
 
     // Actions 
-    const actLogin = (request: IActionLogin) => async(dispatch: Dispatch) => {
+    const actLogin = (request: IActionLogin) => async (dispatch: Dispatch) => {
         const { fullname, onError, onSuccess } = request;
         try {
             const res = await loginServices(fullname);
-            const { data } = res.data;
+            const { data, message } = res.data;
 
-            data.fullname = fullname
+            if (message.code === 500) {
+                onError && onError("unauthenticated");
+            } else {
+                data.fullname = fullname
 
-            dispatch({
-                type: "SET_LEVELS",
-                payload: data.levels
-            });
+                dispatch({
+                    type: "SET_LEVELS",
+                    payload: data.levels
+                });
 
-            dispatch({
-                type: LOGIN,
-                payload: data
-            });
+                dispatch({
+                    type: LOGIN,
+                    payload: data
+                });
 
-            onSuccess && onSuccess();
+                onSuccess && onSuccess();
+            }
         } catch (error) {
-            onError && onError();
+            onError && onError(error);
         }
     }
 
-    const actLogout = (request: IActionLogout) => async(dispatch: Dispatch) => {
+    const actLogout = (request: IActionLogout) => async (dispatch: Dispatch) => {
         const { onError, onSuccess, fullname } = request;
         try {
             console.log(fullname)
@@ -47,7 +51,7 @@ const useLoginActions = () => {
                         level2: false,
                         level3: false
                     }
-                    
+
                 }
             });
 
@@ -57,7 +61,7 @@ const useLoginActions = () => {
         }
     }
 
-    const actLevel1 = async(dispatch: Dispatch) => {
+    const actLevel1 = async (dispatch: Dispatch) => {
         try {
             dispatch({
                 type: "SET_LEVEL1",
@@ -70,7 +74,7 @@ const useLoginActions = () => {
         }
     }
 
-    const actLevel2 = async(dispatch: Dispatch) => {
+    const actLevel2 = async (dispatch: Dispatch) => {
         try {
             dispatch({
                 type: "SET_LEVEL2",
@@ -83,7 +87,7 @@ const useLoginActions = () => {
         }
     }
 
-    const actLevel3 = async(dispatch: Dispatch) => {
+    const actLevel3 = async (dispatch: Dispatch) => {
         try {
             dispatch({
                 type: "SET_LEVEL3",

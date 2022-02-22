@@ -3,9 +3,14 @@ import { useForm } from 'react-hook-form';
 import { IActionLogin } from '../../../models/interfaces/login';
 import useModels from '../../../models';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { IUseNavigation } from '../../../models/interfaces/general';
 
-const useLogin = (navigation: any) => {
+const useLogin = () => {
+    /** Navigation */
+    const navigation = useNavigation<IUseNavigation>();
+
     //useform
     const { control, handleSubmit, reset } = useForm({
         mode: "onChange"
@@ -21,13 +26,19 @@ const useLogin = (navigation: any) => {
     const { loginSelector } = useLoginSelectors();
     const { fullname } = useSelector(loginSelector);
 
+    /** States */
+    const [showAlert, setShowAlert] = useState<boolean>(false);
+
     //handlers
     const handleLogin = (data: any) => {
-        console.log(data)
-        const request : IActionLogin = {
+        const request: IActionLogin = {
             fullname: data.fullname,
-            onError: () => {},
-            onSuccess: () => {  
+            onError: (error: any) => {
+                if(error === "unauthenticated"){
+                    setShowAlert(true);
+                }
+            },
+            onSuccess: () => {
                 navigation.navigate('Welcome')
             }
         };
@@ -44,7 +55,10 @@ const useLogin = (navigation: any) => {
     return {
         control,
         handleSubmit,
-        handleLogin
+        handleLogin,
+        navigation,
+        setShowAlert,
+        showAlert
     }
 }
 
