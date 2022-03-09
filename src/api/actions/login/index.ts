@@ -14,7 +14,7 @@ const useLoginActions = () => {
         try {
             const res = await loginServices(fullname);
             const { data, message } = res.data;
-
+console.log(res.data)
             if (message.code === 500) {
                 onError && onError("unauthenticated");
             } else {

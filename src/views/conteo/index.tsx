@@ -17,7 +17,7 @@ const Conteo: FC<{ navigation: any }> = ({ navigation }) => {
     let CronometerSound = require('../../assets/audio/inciar-3-2-1.mp3');
 
     // Constants
-    const changeSteps = useCallback(() => {
+    const changeSteps = useCallback(() => {   
         const i = setInterval(() => {
             let launchConometerSound = new Sound(CronometerSound, (error: boolean) => {
                 if(!error){
