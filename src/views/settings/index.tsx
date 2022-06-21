@@ -64,20 +64,6 @@ const Settings: FC<{ navigation: any }> = ({ navigation }) => {
                     </Col>
                 </Row>
                 <Row style={SettingsStyles.containerInputs2}>
-                    <Col style={{ paddingRight: '10%' }}>
-                        <BasicInput
-                            control={control}
-                            label="Teléfono"
-                            name="phone"
-                            placeholder=""
-                            rules={{
-                                required: {
-                                    value: true,
-                                    message: "El campo es requerido"
-                                }
-                            }}
-                        />
-                    </Col>
                     <Col>
                         <BasicInput
                             control={control}

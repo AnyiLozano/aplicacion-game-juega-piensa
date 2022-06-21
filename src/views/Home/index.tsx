@@ -21,10 +21,10 @@ const Home: FC<{ navigation: any, route: any }> = (props): JSX.Element => {
         <>
             <Image source={require('../../assets/images/homme1.png')} style={{ width: "100%", flex: 1, resizeMode: 'stretch' }} alt="home" />
             <View style={HomeStyles.view}>
-                <Button colorScheme='red' style={HomeStyles.buttoms} onPress={() => navigation.navigate('Register')} disabled={!disabled}>
+                <Button colorScheme='red' style={HomeStyles.buttoms} onPress={() => navigation.navigate('Register')}>
                     <Image source={require('../../assets/images/BOTON1.png')} alt="home" />
                 </Button>
-                <Button style={HomeStyles.buttoms} onPress={() => navigation.navigate('Login')} disabled={!disabled}>
+                <Button style={HomeStyles.buttoms} onPress={() => navigation.navigate('Login')}>
                     <Image source={require('../../assets/images/sesion.png')} alt="home" />
                 </Button>
                 {
@@ -41,7 +41,7 @@ const Home: FC<{ navigation: any, route: any }> = (props): JSX.Element => {
                                         <HStack space={2} flexShrink={1}>
                                             <Alert.Icon mt="1" />
                                             <Text fontSize="xs" color="white">
-                                            {`Debes aceptar las politicas de privacidad \n para poder ingresar.`}
+                                            {`Debes aceptar las politicas de privacidad`}
                                             </Text>
                                         </HStack>
                                     </HStack>

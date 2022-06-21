@@ -26,8 +26,9 @@ const useRegister = (navigation: any) => {
     // Handlers
     const handleRegister = (data: IRegister) => {
         const request : IActionRegisterUser = {
-            data: data,
-            onSuccess: () => {
+            data: {...data, phone: "12345679898"},
+            onSuccess: (data: any) => {
+                console.log(data)
                 reset({
                     fullname: "",
                     email: "",
@@ -38,6 +39,7 @@ const useRegister = (navigation: any) => {
                 setShowAlert(true);
                 setTitleAlert("Se creo tu cuenta exitosamente.")
                 setSubtitleAlert("Ya que tu cuenta fue creada ahora podras ingresar a nuestra aplicación");
+                setIsError(false);
             },  
             onError: (data: any) => {
                 setShowAlert(true);

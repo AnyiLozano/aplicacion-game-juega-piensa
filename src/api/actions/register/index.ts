@@ -1,6 +1,7 @@
 import { Dispatch } from "redux";
 import { IActionRegisterUser } from '../../../models/interfaces/register';
 import useServices from '../../services/index';
+import {Alert} from "react-native";
 
 const useRegisterActions = () => {
     // Services
@@ -10,8 +11,7 @@ const useRegisterActions = () => {
     const actRegisterUser = (request: IActionRegisterUser) => async(dispatch: Dispatch) => {
         const { data, onError, onSuccess } = request;
         try {
-            const res = await registerUserService(data);
-
+            const res = await registerUserService(data)
             if(res.data.transaction.status === true){
 
                 dispatch({
@@ -23,7 +23,7 @@ const useRegisterActions = () => {
                     }
                 });
                 
-                onSuccess && onSuccess();
+                onSuccess && onSuccess(res.data);
             }else{
                 onError && onError(res.data.message.content);
             }

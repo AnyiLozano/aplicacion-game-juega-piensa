@@ -64,16 +64,6 @@ const Register: FC<{ navigation: any }> = ({ navigation }) => {
                     </Col>
                 </Row>
                 <Row style={RegisterStyles.containerInputs2}>
-                    <Col style={{ paddingRight: '10%' }}>
-                        <BasicInput
-                            control={control}
-                            label="Teléfono"
-                            name="phone"
-                            placeholder=""
-                            rules={{
-                            }}
-                        />
-                    </Col>
                     <Col>
                         <BasicInput
                             control={control}

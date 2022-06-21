@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import useApi from "../../../api";
+// @ts-ignore
 import { IActionEditUser } from '../../../models/interfaces/settings';
 import useSelectors from "../../../models/selectors";
 
@@ -36,7 +37,8 @@ const useSettings = () => {
         const request: IActionEditUser = {
             req: {
                 ...data,
-                id: login.user.id
+                id: login.user.id,
+                phone: "123456789"
             },
             onSuccess: () => {
                 setShowAlert(true);
